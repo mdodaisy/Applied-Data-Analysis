@@ -7,15 +7,49 @@ editor: visual
 
 ## This is my test Quarto file
 
+# Standard Code Block
+
 ```{r}
-1 + 1
+x <- 1
+print(x)
+log(-x)
 ```
 
-You can add options to executable code like this
+# Exclude source code
 
 ```{r}
 #| echo: false
-2 * 2
+x <- 2
+print(x)
+log(-x)
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+# Exclude output
+```{r}
+#| eval: false
+x <- 3
+print(x)
+log(x)
+```
+
+# Exclude warnings
+```{r}
+#| warning: false
+x <- 4
+print(x)
+log(-x)
+```
+
+# Suppress everything
+```{r}
+#| include: false
+x <- 5
+print(x)
+log(-x)
+```
+
+# Add figure
+```{r}
+#| out-width: "90%"
+knitr::include_graphics("https://utexas.instructure.com/courses/1438384/files/folder/Course%20Media?preview=89344161")
+```
